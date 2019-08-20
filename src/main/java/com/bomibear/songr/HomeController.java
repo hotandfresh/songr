@@ -30,8 +30,20 @@ public class HomeController {
     }
 
     @GetMapping("/reverse")
-    public String reverse(){
+    public String reverse(@RequestParam(required = false, defaultValue = "hello world") String sentence, Model m){
+        sentence = reverseSentence(sentence);
+        m.addAttribute("sentence", sentence);
         return "reverse";
     }
 
+    public String reverseSentence(String sentence){
+        String[] splitSentence = sentence.split("\\s+");
+        StringBuilder sb = new StringBuilder();
+        for(int i = splitSentence.length - 1; i >= 0; i--){
+            sb.append(splitSentence[i]);
+            sb.append(" ");
+        }
+
+        return sb.toString().trim();
+    }
 }

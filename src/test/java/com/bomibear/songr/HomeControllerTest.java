@@ -14,4 +14,11 @@ public class HomeControllerTest {
         assertTrue(hc.capitalizeWord(word).equals("HELLO"));
     }
 
+    @Test
+    public void canReverseSentence(){
+        String sentence = "Hello world";
+        HomeController hc = new HomeController();
+
+        assertTrue(hc.reverseSentence(sentence).equals("world Hello"));
+    }
 }
