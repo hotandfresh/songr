@@ -54,11 +54,11 @@
                 <dt>Song Count</dt>
                 <dd th:text="${album.songCount}"></dd>
 
-                <dt>Length</dt>
+                <dt>Length in seconds</dt>
                 <dd th:text="${album.length}"></dd>
 
                 <dt>Album Cover</dt>
-                <dd><img th:src="${album.imageUrl}" alt="album cover"/></dd>
+                <dd><img th:src="${album.imageUrl}" th:alt-title="${album.title}"/></dd>
 
             </div>
         </dl>
