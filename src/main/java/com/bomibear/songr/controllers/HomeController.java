@@ -1,4 +1,4 @@
-package com.bomibear.songr;
+package com.bomibear.songr.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
