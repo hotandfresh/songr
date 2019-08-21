@@ -20,11 +20,6 @@ public class AlbumController {
 
     @GetMapping("/albums")
     public String getAllAlbums(Model m){
-//        Album album1 = new Album("California Girls", "Katy Perry", 10, 500, "https://khuneva.files.wordpress.com/2012/02/california-girls.png");
-//
-//        Album album2 = new Album("Reign in Blood", "Slayer", 666, 666, "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Reign_in_blood.jpg/220px-Reign_in_blood.jpg");
-
-
         List<Album> albums = albumRepository.findAll();
 
         m.addAttribute("albums", albums);
