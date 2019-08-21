@@ -8,6 +8,8 @@ The application was intialized on [the Spring website](https://start.spring.io/)
 ## How to Run the Application
 Clone the repo [here](https://github.com/hotandfresh/songr) and save it in a directory of your choice.  Open the application with an editor of your choice and hit the green arrow to run it.  Navigate to ```http://localhost:8080```
 
+Additionally, after cloning the repo, the application can be run, from the root of the directory with the following terminal command: ```./gradlew run```
+
 ## End points
 Add any of these endpoints to the end of the local host address.
 
