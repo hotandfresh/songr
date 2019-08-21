@@ -25,7 +25,14 @@ Add any of these endpoints to the end of the local host address.
 
 ```/albums```: This route will display all albums that have been added to the database.  Additionally, there's an option to add more albums.
 
-As of August 21st, 2019, data needs to be added manually at the ```\albums``` endpoint.  Feel free to use this:
+As of August 21st, 2019:
+ - Postgresql needs to be installed.  Login to psql Afterwards, create a db called ```songr```.  
+ 
+ - Uncomment line 4 of application.properties. Replace ```spring.datasource.username``` and ```spring.datasource.password``` with your respective postgresql user name and password. 
+ 
+ - Rebuild the application 
+ 
+ - data needs to be added manually at the ```\albums``` endpoint.  Feel free to use this:
 
 ```
 Title: California Girls
