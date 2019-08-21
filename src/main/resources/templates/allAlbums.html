@@ -41,15 +41,27 @@
     </div>
 
     <div class="container">
-        <h3>All Songs</h3>
-        <div th:each="album: ${albums}">
-            <h3 th:text="${album.title}"></h3>
+        <dl class="dl-horizontal">
+            <h3>All Songs</h3>
+            <div th:each="album: ${albums}">
 
-            <p>Artist: <span th:text="${album.artist}"></span></p>
-            <p>Song Count: <span th:text="${album.songCount}"></span></p>
-            <p>Length: <span th:text="${album.length}"></span></p>
-            <img th:src="${album.imageUrl}" alt="album cover"/>
-        </div>
+                <dt>Song</dt>
+                <dd th:text="${album.title}"></dd>
+
+                <dt>Artist</dt>
+                <dd th:text="${album.artist}"></dd>
+
+                <dt>Song Count</dt>
+                <dd th:text="${album.songCount}"></dd>
+
+                <dt>Length</dt>
+                <dd th:text="${album.length}"></dd>
+
+                <dt>Album Cover</dt>
+                <dd><img th:src="${album.imageUrl}" alt="album cover"/></dd>
+
+            </div>
+        </dl>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
