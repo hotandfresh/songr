@@ -3,34 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>All Albums</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css"/>
 </head>
 <body>
 
-    <h1>Add a Song</h1>
-
-    <div>
+    <div class="container-fluid">
+        <legend>Add a Song</legend>
         <form method="POST" action="/albums">
-            Title: <input name="title">
-            Artist: <input name="artist">
-            Song Count: <input type="number" name="songCount">
-            Length: <input type="number" name="length">
-            Image Src: <input type="url" name="imageUrl">
+            <p>
+                <label for="title">Title:</label>
+                <input name="title" type="text" id="title">
+            </p>
+
+            <p>
+                <label for="artist">Artist:</label>
+                <input name="artist" type="text" id="artist">
+            </p>
+
+            <p>
+                <label for="songCount">Track Number:</label>
+                <input name="songCount" type="number" id="songCount" min="0" max="100">
+            </p>
+
+            <p>
+                <label for="length">Length in secs:</label>
+                <input name="length" type="number" id="length" min="0" max="100">
+            </p>
+
+            <p>
+                <label for="imageUrl">Image URL: </label>
+                <input name="imageUrl" type="url" id="imageUrl">
+            </p>
+
             <input type="submit"/>
         </form>
     </div>
 
-    <h1>All Songs</h1>
+    <div class="container-fluid">
+        <h3>All Songs</h3>
+        <div th:each="album: ${albums}">
+            <h3 th:text="${album.title}"></h3>
 
-    <div th:each="album: ${albums}">
-        <h3 th:text="${album.title}"></h3>
-
-        <p>Artist: <span th:text="${album.artist}"></span></p>
-        <p>Song Count: <span th:text="${album.songCount}"></span></p>
-        <p>Length: <span th:text="${album.length}"></span></p>
-        <img th:src="${album.imageUrl}"/>
+            <p>Artist: <span th:text="${album.artist}"></span></p>
+            <p>Song Count: <span th:text="${album.songCount}"></span></p>
+            <p>Length: <span th:text="${album.length}"></span></p>
+            <img th:src="${album.imageUrl}" alt="album cover"/>
+        </div>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 
 </html>
