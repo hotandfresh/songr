@@ -1,6 +1,12 @@
 package com.bomibear.songr.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Album {
+    @Id
+    long id;
     String title;
     String artist;
     int songCount;
@@ -14,7 +20,6 @@ public class Album {
         this.length = length;
         this.imageUrl = imageUrl;
     }
-
 
     public String getTitle() {
         return title;
