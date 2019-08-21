@@ -1,5 +1,6 @@
 package com.bomibear.songr;
 
+import com.bomibear.songr.controllers.HomeController;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
