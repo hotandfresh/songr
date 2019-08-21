@@ -1,17 +1,22 @@
 package com.bomibear.songr.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Album {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
     String title;
     String artist;
     int songCount;
     double length;
     String imageUrl;
+
+    public Album(){}
 
     public Album(String title, String artist, int songCount, double length, String imageUrl){
         this.title = title;
