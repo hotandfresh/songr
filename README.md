@@ -25,5 +25,15 @@ Add any of these endpoints to the end of the local host address.
 
 ```/albums```: This route will display all albums that have been added to the database.  Additionally, there's an option to add more albums.
 
+As of August 21st, 2019, data needs to be added manually at the ```\albums``` endpoint.  Feel free to use this:
+
+```
+Title: California Girls
+Artist: Katy Perry
+Song Count: 10
+Length: 500
+Image Url: https://khuneva.files.wordpress.com/2012/02/california-girls.png
+```
+
 ## Resources
 Splitting a word on was found [here](https://stackoverflow.com/questions/7899525/how-to-split-a-string-by-space)
