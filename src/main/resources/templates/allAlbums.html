@@ -8,39 +8,39 @@
 </head>
 <body>
 
-    <div class="container-fluid">
+    <div class="container">
         <legend>Add a Song</legend>
         <form method="POST" action="/albums">
-            <p>
+            <div class="form-group">
                 <label for="title">Title:</label>
-                <input name="title" type="text" id="title">
-            </p>
+                <input name="title" type="text" id="title" class="form-control">
+            </div>
 
-            <p>
+            <div class="form-group">
                 <label for="artist">Artist:</label>
-                <input name="artist" type="text" id="artist">
-            </p>
+                <input name="artist" type="text" id="artist" class="form-control">
+            </div>
 
-            <p>
+            <div class="form-group">
                 <label for="songCount">Track Number:</label>
-                <input name="songCount" type="number" id="songCount" min="0" max="100">
-            </p>
+                <input name="songCount" type="number" id="songCount" min="0" class="form-control">
+            </div>
 
-            <p>
+            <div class="form-group">
                 <label for="length">Length in secs:</label>
-                <input name="length" type="number" id="length" min="0" max="100">
-            </p>
+                <input name="length" type="number" id="length" min="0" class="form-control">
+            </div>
 
-            <p>
+            <div class="form-group">
                 <label for="imageUrl">Image URL: </label>
-                <input name="imageUrl" type="url" id="imageUrl">
-            </p>
+                <input name="imageUrl" type="url" id="imageUrl" class="form-control">
+            </div>
 
-            <input type="submit"/>
+            <button type="submit" class="btn btn-primary btn-md">Submit</button>
         </form>
     </div>
 
-    <div class="container-fluid">
+    <div class="container">
         <h3>All Songs</h3>
         <div th:each="album: ${albums}">
             <h3 th:text="${album.title}"></h3>
