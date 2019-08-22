@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Songs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+    <h1>All The Songs</h1>
+    <div th:each="song : ${songs}" class="song">
+        <h3 th:id="${song.title}" th:text="${song.title}">Song Title</h3>
+        <p>
+            <a th:href="${ '/albums/' + song.album.id}">Directed by <span th:text="${song.album}"></span></a>
+        </p>
+    </div>
+
+    <div>
+        <form method="POST" action="/songs">
+            Title:<input name="title" />
+            Seconds:<input name="seconds" />
+            Track Number:<input name="trackNumber" />
+            Album:<input name="album" />
+
+            <input type="submit" />
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>

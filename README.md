@@ -43,4 +43,6 @@ Image Url: https://khuneva.files.wordpress.com/2012/02/california-girls.png
 ```
 
 ## Resources
+Bootstrap style [documentation](https://getbootstrap.com/docs/3.4/css/)
+
 Splitting a word on was found [here](https://stackoverflow.com/questions/7899525/how-to-split-a-string-by-space)
