@@ -10,7 +10,7 @@
     <div th:each="song : ${songs}" class="song">
         <h3 th:id="${song.title}" th:text="${song.title}">Song Title</h3>
         <p>
-            <a th:href="${ '/albums/' + song.album.id}">From the album: <span th:text="${song.album}"></span></a>
+            <a th:href="${ '/albums/' + song.album.id}">From the album: <span th:text="${song.title}"></span></a>
         </p>
     </div>
 

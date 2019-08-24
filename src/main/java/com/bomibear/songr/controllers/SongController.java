@@ -31,16 +31,11 @@ public class SongController {
         return "allSongs";
     }
 
-    @PostMapping("/songs")
-    public RedirectView addSongs(String title, double length, int trackNumber, String album, @PathVariable long id){
+    @PostMapping("/albums/{id}/songs")
+    public RedirectView addSongs(String title, double length, int trackNumber, @PathVariable long id){
         Album a = albumRepository.findById(id);
-//        if(a == null){
-//            a = new Album();
-//            albumRepository.save(a);
-//        }
-
         Song song = new Song(title, length, trackNumber, a);
         songRepository.save(song);
-        return new RedirectView("/songs");
+        return new RedirectView("/albums/" + id);
     }
 }
