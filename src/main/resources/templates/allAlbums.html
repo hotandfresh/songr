@@ -9,7 +9,7 @@
 <body>
 
     <div class="container">
-        <legend>Add a Song</legend>
+        <legend>Add an album</legend>
         <form method="POST" action="/albums">
             <div class="form-group">
                 <label for="title">Title:</label>
@@ -22,7 +22,7 @@
             </div>
 
             <div class="form-group">
-                <label for="songCount">Track Number:</label>
+                <label for="songCount">Number of Tracks:</label>
                 <input name="songCount" type="number" id="songCount" min="0" class="form-control">
             </div>
 
@@ -45,13 +45,13 @@
             <h3>All Songs</h3>
             <div th:each="album: ${albums}">
 
-                <dt>Song</dt>
-                <dd th:text="${album.title}"></dd>
+                <dt>Album Title</dt>
+                <a th:href="'/albums/' + ${album.id}"><dd th:text="${album.title}"></dd></a>
 
                 <dt>Artist</dt>
                 <dd th:text="${album.artist}"></dd>
 
-                <dt>Song Count</dt>
+                <dt>Number of Tracks</dt>
                 <dd th:text="${album.songCount}"></dd>
 
                 <dt>Length in seconds</dt>

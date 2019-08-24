@@ -1,9 +1,7 @@
 package com.bomibear.songr.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Album {
@@ -16,6 +14,9 @@ public class Album {
     double length;
     String imageUrl;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "album")
+    List<Song> songs;
+
     public Album(){}
 
     public Album(String title, String artist, int songCount, double length, String imageUrl){
@@ -24,6 +25,10 @@ public class Album {
         this.songCount = songCount;
         this.length = length;
         this.imageUrl = imageUrl;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getTitle() {
@@ -44,5 +49,9 @@ public class Album {
 
     public String getImageUrl() {
         return imageUrl;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
     }
 }
