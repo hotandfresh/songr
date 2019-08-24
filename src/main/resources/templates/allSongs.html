@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All songs</title>
+</head>
+<body>
+    <h1>All Songs</h1>
+
+    <div th:each="song : ${songs}" class="song">
+        <h3 th:id="${song.title}" th:text="${song.title}">Song Title</h3>
+        <p>
+            <a th:href="${ '/albums/' + song.album.id}">From the album: <span th:text="${song.title}"></span></a>
+        </p>
+    </div>
+
+</body>
+</html>
