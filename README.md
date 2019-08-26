@@ -52,3 +52,5 @@ Add any of these endpoints to the end of ```http://localhost:8080```
 
 ## Resources
 Splitting a word on was found [here](https://stackoverflow.com/questions/7899525/how-to-split-a-string-by-space)
+
+Error page was from [here](https://www.logicbig.com/tutorials/spring-framework/spring-boot/custom-thymeleaf-error-page.html);
