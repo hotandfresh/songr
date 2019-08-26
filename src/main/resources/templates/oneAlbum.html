@@ -3,21 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>All the Songs on an Album</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css"/>
 </head>
 <body>
-    <h1 th:text="${album.title}"></h1>
-    <img th:src="${album.imageUrl}"/>
-    <div th:each="song : ${album.songs}">
-        <h3 th:text="${song.title}"></h3>
+    <div class="container">
+        <h1 th:text="${album.title}"></h1>
+        <img th:src="${album.imageUrl}"/>
+        <h3>Track Titles:</h3>
+        <div th:each="song : ${album.songs}">
+            <p th:text="${song.title}"></p>
+        </div>
+
+        <h2>Add a new song to <span th:text="${album.title}"></span></h2>
+        <form method="POST" th:action="${'/albums/' + album.id + '/songs'}">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input name="title" type="text" id="title" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="length">Length:</label>
+                <input name="length" type="number" id="length" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="trackNumber">Track Number:</label>
+                <input name="trackNumber" type="text" id="trackNumber" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-md">Submit</button>
+
+        </form>
     </div>
 
-    <h2>Add a new song to this album!</h2>
-    <!-- create the route that listens for this post and creates a new movie with the director whose id is in the path -->
-    <form method="POST" th:action="${'/albums/' + album.id + '/songs'}">
-        Title: <input name="title"/>
-        Length: <input name="length"/>
-        Track Number: <input name="trackNumber"/>
-        <input type="submit" />
-    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
