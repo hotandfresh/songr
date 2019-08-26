@@ -49,6 +49,8 @@ Add any of these endpoints to the end of ```http://localhost:8080```
 
 ```/albums/{id}/songs```: After adding a song, this route redirects the user back to ```/albums/{number}```.  Where the user can see the album that song was added to and all the other songs on that album, too.
  
+## Acknowledgement
+This lab was created in collaboration with [nhuuu](https://github.com/nhuuu) and [rttgg](https://github.com/rttgg).
 
 ## Resources
 Splitting a word on was found [here](https://stackoverflow.com/questions/7899525/how-to-split-a-string-by-space)
